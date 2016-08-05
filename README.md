@@ -1,0 +1,2 @@
+# XTableViewAutoLayoutHeader-Footer
+让表格视图UITableView的TableHeader和TableFooter可以使用AutoLayout进行布局

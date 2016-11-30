@@ -17,12 +17,14 @@
     XTableViewAddedView *headerView = [[XTableViewAddedView alloc]initWithFrame:CGRectMake(0, 0, width, 10)];
     [headerView.contentView addSubview:containView];
     
-    [headerView.contentView addConstraints:@[
-                                             [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
-                                             [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
-                                             [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0],
-                                             [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]
-                                             ]];
+    containView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [headerView addConstraints:@[
+                                 [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+                                 [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+                                 [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0],
+                                 [NSLayoutConstraint constraintWithItem:containView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:headerView.contentView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]
+                                 ]];
     
     return headerView;
 }

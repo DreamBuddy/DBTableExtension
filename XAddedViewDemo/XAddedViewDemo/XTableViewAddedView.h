@@ -14,6 +14,8 @@
 
 @interface XTableViewAddedView : UIView
 
++(XTableViewAddedView *)factoryMakerWidth:(CGFloat)width containView:(UIView *)containView;
+
 @property (nonatomic ,strong) XTableViewContentView *contentView;
 
 ///子类重写
